@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Water Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <h1>Water Management Dashboard</h1>
+
+        <p>Welcome to your community water management system.</p>
+
+        <div class="dashboard-box">
+    <h2>Borewell Water Level</h2>
+    <p>Current Level: <strong id="water-level">68%</strong></p>
+    <div class="water-level-bar">
+    <div class="water-level-fill" id="water-level-fill"></div>
+</div>
+    <p>Status: <strong id="water-status">Medium</strong></p>
+    <p>Last Updated: <strong>Just now</strong></p>
+    </div>
+    <button onclick="window.location.href='water-level.html'">
+    View Water Level Details
+</button>
+
+        <div class="dashboard-box">
+            <h2>Water Tanker</h2>
+            <p id="tanker-status">No tanker booked yet.</p>
+            <button onclick="cancelRequest()">Cancel Request</button>
+            <button onclick="window.location.href='request.html'">Request Tanker</button>
+            <button onclick="window.location.href='tracking.html'">Track Tanker Request</button>
+            <button onclick="window.location.href='history.html'">Request History</button>
+        </div>
+
+        <div class="dashboard-box">
+            <h2>Upcoming Schedule</h2>
+            <p>No upcoming delivery.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        let request = JSON.parse(localStorage.getItem("tankerRequest"));
+
+    if (request) {
+    document.getElementById("tanker-status").innerHTML =
+        "Tanker Request: " + request.quantity + " Litres<br>" +
+        "Date: " + request.date + "<br>" +
+        "Time: " + request.time + "<br>" +
+        "Address: " + request.address + "<br>" +
+        "Priority: " + request.priority + "<br>" +
+        "Reason: " + request.reason + "<br>" +
+        "Contact: " + request.contact + "<br>" +
+        "Status: " + request.status;
+}
+</script>
+</body>
+</html>

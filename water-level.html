@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Borewell Water Level</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <h1>Borewell Water Level</h1>
+
+        <p>Current water availability in the community borewell.</p>
+
+        <div class="dashboard-box">
+            <h2>Current Level</h2>
+
+            <p>
+                Water Level:
+                <strong id="water-level">68%</strong>
+            </p>
+
+            <div class="water-level-bar">
+                <div class="water-level-fill" id="water-level-fill"></div>
+            </div>
+
+            <p>
+                Status:
+                <strong id="water-status">Medium</strong>
+            </p>
+
+            <p>
+                Last Updated:
+                <strong>Just now</strong>
+            </p>
+        </div>
+
+        <div class="dashboard-box">
+            <h2>Water Availability</h2>
+            <p>The current borewell level is being monitored.</p>
+        </div>
+
+        <button onclick="window.location.href='dashboard.html'">
+            Back to Dashboard
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

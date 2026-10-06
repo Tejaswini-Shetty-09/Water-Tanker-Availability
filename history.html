@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <h1>Request History</h1>
+
+        <p>View your previous water tanker requests.</p>
+
+        <div class="dashboard-box">
+            <h2>Tanker Requests</h2>
+
+            <div id="history-list">
+                <p>No previous requests found.</p>
+            </div>
+        </div>
+
+        <button onclick="window.location.href='dashboard.html'">
+            Back to Dashboard
+        </button>
+    </div>
+
+    <script>
+        let request = JSON.parse(localStorage.getItem("tankerRequest"));
+
+        if (request) {
+            document.getElementById("history-list").innerHTML =
+                "<p><strong>Quantity:</strong> " + request.quantity + " Litres</p>" +
+                "<p><strong>Date:</strong> " + request.date + "</p>" +
+                "<p><strong>Time:</strong> " + request.time + "</p>" +
+                "<p><strong>Address:</strong> " + request.address + "</p>" +
+                "<p><strong>Priority:</strong> " + request.priority + "</p>" +
+                "<p><strong>Status:</strong> " + request.status + "</p>";
+        }
+    </script>
+
+</body>
+</html>

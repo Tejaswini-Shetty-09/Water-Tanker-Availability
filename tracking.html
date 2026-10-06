@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tanker Request Tracking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+        <h1>Tanker Request Tracking</h1>
+
+        <p>Track the current status of your water tanker request.</p>
+
+        <div class="dashboard-box">
+
+            <h2>Request Status</h2>
+
+            <p>
+                Current Status:
+                <strong id="tracking-status">Pending</strong>
+            </p>
+<p id="tracking-details"></p>
+            <div class="tracking-status" id="tracking-steps">
+                <p>✓ Pending</p>
+                <p>○ Approved</p>
+                <p>○ Scheduled</p>
+                <p>○ Assigned</p>
+                <p>○ Out for Delivery</p>
+                <p>○ Delivered</p>
+            </div>
+
+        </div>
+
+        <button onclick="window.location.href='dashboard.html'">
+            Back to Dashboard
+        </button>
+
+    </div>
+<script>
+    let request = JSON.parse(localStorage.getItem("tankerRequest"));
+
+    if (request) {
+        document.getElementById("tracking-status").innerHTML = request.status;
+
+        let steps = document.getElementById("tracking-steps").getElementsByTagName("p");
+
+        for (let i = 0; i < steps.length; i++) {
+            if (steps[i].innerText.includes(request.status)) {
+                steps[i].style.fontWeight = "bold";
+            }
+        }
+        document.getElementById("tracking-details").innerHTML =
+    "Quantity: " + request.quantity + " Litres<br>" +
+    "Date: " + request.date + "<br>" +
+    "Time: " + request.time + "<br>" +
+    "Address: " + request.address + "<br>" +
+    "Priority: " + request.priority + "<br>" +
+    "Contact: " + request.contact;
+    }
+</script>
+</body>
+</html>

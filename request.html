@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Water Tanker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="request-container">
+        <h1>Request Water Tanker</h1>
+        <p>Fill in the details to request a water tanker.</p>
+
+        <div class="request-box">
+
+            <label>Water Quantity</label>
+            <select id="quantity">
+                <option value="">Select quantity</option>
+                <option value="1000">1000 Litres</option>
+                <option value="3000">3000 Litres</option>
+                <option value="5000">5000 Litres</option>
+            </select>
+
+            <label>Preferred Date</label>
+            <input type="date" id="date">
+
+            <label>Preferred Time</label>
+            <input type="time" id="time">
+
+            <label>Delivery Address</label>
+            <textarea id="address" placeholder="Enter delivery address"></textarea>
+            <label>Priority</label>
+<select id="priority">
+    <option value="">Select priority</option>
+    <option value="Normal">Normal</option>
+    <option value="Urgent">Urgent</option>
+</select>
+<label>Reason for Request</label>
+<textarea id="reason" placeholder="Enter reason for requesting a tanker"></textarea>
+<label>Contact Number</label>
+<input type="text" id="contact" placeholder="Enter contact number">
+            <button onclick="submitRequest()">Submit Request</button>
+            <button onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+            <p id="request-message"></p>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
