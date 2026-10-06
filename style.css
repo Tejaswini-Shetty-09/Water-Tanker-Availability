@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #e3f2fd;
@@ -20,7 +23,8 @@ h1 {
 
 .login-box {
     background-color: white;
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     margin: 30px auto;
     padding: 30px;
     border-radius: 12px;
@@ -101,6 +105,7 @@ button:hover {
 /* Tanker Request Page */
 
 .request-container {
+    width: 100%;
     max-width: 700px;
     margin: 0 auto;
     padding: 50px 20px;
